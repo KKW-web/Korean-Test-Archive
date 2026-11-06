@@ -31,3 +31,7 @@ for e in data['exams']:
 assert len(data['exams'])==17
 assert sum(len(e['questions']) for e in data['exams'])==952
 print(json.dumps({'electiveExams':17,'questions':952,'sourceCrops':count}))
+
+# Supplementary PDFs are downloaded, validated and bundled for offline access.
+import runpy
+runpy.run_path('scripts/attach_explanations.py',run_name='__main__')
