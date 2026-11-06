@@ -3,7 +3,7 @@ const root=path.resolve(process.argv[2]||'github-archive'),out=path.resolve(proc
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
 function inline(name){return read(name).replace(/<link[^>]+href="([^"?]+)(?:\?[^"]*)?"[^>]*>/g,(m,f)=>f.endsWith('.css')?'<style>'+read(f)+'</style>':m).replace(/<script src="([^"?]+)(?:\?[^"]*)?"><\/script>/g,(m,f)=>'<script>'+read(f).replace(/<\/script/gi,'<\\/script')+'</script>');}
 const assets={};for(const dir of ['assets','clips','pages'])for(const f of fs.readdirSync(path.join(root,dir))){const p=dir+'/'+f;assets[p]=fs.readFileSync(path.join(root,p)).toString('base64');}
-for(const f of ['analysis_report.pdf','modern_poetry_questions_answers.pdf','modern_poetry_theory_analysis.pdf'])assets[f]=fs.readFileSync(path.join(root,f)).toString('base64');
+for(const f of ['analysis_report.pdf','modern_poetry_questions_answers.pdf','modern_poetry_theory_analysis.pdf'])if(fs.existsSync(path.join(root,f)))assets[f]=fs.readFileSync(path.join(root,f)).toString('base64');
 const runtime=function(){
  const shared=window.opener?.ARCHIVE_OFFLINE;const payload=shared||JSON.parse(document.getElementById('offline-assets').textContent);window.ARCHIVE_OFFLINE=payload;const urls=shared?.urls||{};payload.urls=urls;
  function resolve(p){if(!p)return p;const clean=p.split('#')[0].split('?')[0].replace(/^\.\//,'');if(!payload.assets[clean])return p;if(!urls[clean]){let s=atob(payload.assets[clean]),b=new Uint8Array(s.length);for(let i=0;i<s.length;i++)b[i]=s.charCodeAt(i);urls[clean]=URL.createObjectURL(new Blob([b],{type:clean.endsWith('.webp')?'image/webp':clean.endsWith('.pdf')?'application/pdf':'application/octet-stream'}));}return urls[clean]+(p.includes('#')?'#'+p.split('#').slice(1).join('#'):'');}
