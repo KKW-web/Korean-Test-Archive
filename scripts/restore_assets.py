@@ -21,9 +21,9 @@ for exam in data['exams']:
                 dest=root/clip['src']
                 if dest.exists():continue
                 page=doc[int(clip['page'])-1]
-                box=clip.get('sourceBox')
+                box=clip.get('sourceBox') or clip.get('bboxPdf')
                 if not box:raise ValueError(f'Missing crop metadata: {dest}')
-                scale=clip.get('dpi',180)/72
+                scale=clip.get('dpi',clip.get('renderDpi',180))/72
                 pix=page.get_pixmap(matrix=fitz.Matrix(scale,scale),clip=fitz.Rect(box),alpha=False)
                 image=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
                 trim=clip.get('verticalTrimPixels')
