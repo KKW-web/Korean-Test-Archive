@@ -1,6 +1,6 @@
 'use strict';
 // Enter the account name from https://ACCOUNT.goatcounter.com after owner signup.
-window.ARCHIVE_ANALYTICS = window.ARCHIVE_ANALYTICS || { account: 'kkw' };
+window.ARCHIVE_ANALYTICS = window.ARCHIVE_ANALYTICS || { account: 'kkw-korean-archive' };
 (() => {
   const account = window.ARCHIVE_ANALYTICS.account;
   if (!/^[a-z0-9][a-z0-9-]{1,60}$/.test(account || '') ||
@@ -15,7 +15,7 @@ window.ARCHIVE_ANALYTICS = window.ARCHIVE_ANALYTICS || { account: 'kkw' };
   stats.id = 'visitorStats';
   stats.setAttribute('aria-label', '방문 통계');
   stats.style.cssText = 'flex-basis:100%;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:12px;';
-  stats.innerHTML = '<span>오늘 방문자 <b id="visitorsToday">—</b></span><span>전체 방문자 <b id="visitorsTotal">—</b></span><small id="visitorStatsNote">통계는 지연 반영될 수 있습니다.</small>';
+  stats.innerHTML = '<span>오늘 방문자 <b id="visitorsToday">—</b></span><span>전체 방문자 <b id="visitorsTotal">—</b></span><small id="visitorStatsNote">통계 표시는 최대 4시간 지연될 수 있습니다.</small>';
   footer.style.flexWrap = 'wrap';
   footer.appendChild(stats);
   const day = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -37,6 +37,10 @@ window.ARCHIVE_ANALYTICS = window.ARCHIVE_ANALYTICS || { account: 'kkw' };
   const script = document.createElement('script');
   script.src = 'https://gc.zgo.at/count.js';
   script.async = true;
+  script.setAttribute('data-goatcounter', origin + '/count');
+  script.onerror = () => {
+    document.getElementById('visitorStatsNote').textContent = '방문 통계 연결에 실패했습니다. 광고 차단 설정을 확인해 주세요.';
+  };
   script.onload = () => {
     if (typeof window.goatcounter.count === 'function')
       window.goatcounter.count({path, title:'국어영역 기출 아카이브', referrer:''});
