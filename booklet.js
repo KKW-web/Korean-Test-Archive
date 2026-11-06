@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const KEY='korean2028-booklet-draft',read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f;}catch{return f;}};
+const KEY='korean2028-booklet-draft',read=(k,f)=>{try{return JSON.parse(localStorage.getItem(window.ARCHIVE_STORAGE_KEY(k)))??f;}catch{return f;}};
 const defaults=()=>({source:'all',query:'',grade:'',exams:[],areas:[],subs:[],includeMixed:true,excluded:[],sort:'exam',title:'국어 기출 자료집',mode:'both',cover:true,includeAnalysis:false});
 let state={...defaults(),...read(KEY,{})};const data=window.APP_DATA,exams=data?.exams||[];
 if(!exams.length){$('#bookletError').hidden=false;$('#bookletError').textContent='자료를 불러오지 못했습니다. 파일 묶음을 모두 압축 해제한 뒤 다시 열어 주세요.';$('#bookletPreview').disabled=true;return;}
@@ -68,6 +68,7 @@ document.addEventListener('change',e=>{const t=e.target;
 $('#bookletQuery').addEventListener('input',e=>{state.query=e.target.value;update({filters:true,refresh:false});});
 $('#bookletTitle').addEventListener('input',e=>{state.title=e.target.value;save();});
 window.addEventListener('storage',e=>{if(['korean2028-bookmarks','korean2028-collection'].includes(e.key))renderResults();});
-function preview(){const chosen=selected(found());if(!chosen.length)return;const job={source:'booklet',keys:chosen.map(s=>s.key),mode:state.mode,title:String(state.title).trim()||'국어 기출 자료집',cover:state.cover,includeAnalysis:state.mode!=='answers'&&state.includeAnalysis};try{localStorage.setItem('korean2028-print-job',JSON.stringify(job));}catch{}save();const popup=window.open('print.html#job='+encodeURIComponent(JSON.stringify(job)),'_blank');if(!popup)$('#bookletNotice').textContent='미리보기 창이 차단되었습니다. 이 사이트의 팝업을 허용한 뒤 다시 눌러 주세요.';}
+function preview(){const chosen=selected(found());if(!chosen.length)return;const job={archive:window.ARCHIVE_MODE,source:'booklet',keys:chosen.map(s=>s.key),mode:state.mode,title:String(state.title).trim()||'국어 기출 자료집',cover:state.cover,includeAnalysis:state.mode!=='answers'&&state.includeAnalysis};try{localStorage.setItem(window.ARCHIVE_STORAGE_KEY('korean2028-print-job'),JSON.stringify(job));}catch{}save();const popup=window.open(window.ARCHIVE_URL('print.html')+'#job='+encodeURIComponent(JSON.stringify(job)),'_blank');if(!popup)$('#bookletNotice').textContent='미리보기 창이 차단되었습니다. 이 사이트의 팝업을 허용한 뒤 다시 눌러 주세요.';}
 controls();renderResults();save();
 })();
+

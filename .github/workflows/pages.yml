@@ -21,14 +21,14 @@ jobs:
       - run: pip install pymupdf pillow
       - name: Restore all question and explanation images
         run: python scripts/restore_assets.py
+      - name: Restore elective exam originals and source crops
+        run: python scripts/restore_elective.py
+      - name: Verify both archive datasets
+        run: node scripts/verify_archive.cjs
       - name: Build single downloadable HTML
         run: node scripts/build_offline.cjs . korean_exam_archive.html
       - name: Stage public website
-        run: |
-          mkdir _site
-          cp *.html *.js *.css *.pdf _site/
-          cp -r assets clips pages _site/
-          touch _site/.nojekyll
+        run: node scripts/stage_site.cjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -44,3 +44,4 @@ jobs:
           enablement: true
       - uses: actions/deploy-pages@v4
         id: deployment
+

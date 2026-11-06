@@ -14,3 +14,10 @@
 - Use scripts/build_offline.cjs in the Pages build so the downloadable HTML and hosted files are created together.
 - Do not show an HTML download button in the website UI. Provide the HTML file/link directly in the conversation instead.
 - Verify deployment before reporting completion and identify any limitations honestly.
+
+
+## Archive modes
+- Default `index.html#browse` uses the original common-format archive. `?archive=elective#browse` uses the elective CSAT/KICE archive. Preserve both datasets and their separate browser storage.
+- Question identity in the elective dataset is exam + subject + number; common 1–34 occurs once, each elective has its own 35–45.
+- PDF originals are restored from SHA-256-verified source-packs by scripts/restore_elective.py. Keep crops and sources consistent.
+- Missing supplied explanations are explicitly marked; external explanation links need internet, including in the offline HTML.

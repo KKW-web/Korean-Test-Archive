@@ -1,0 +1,311 @@
+[
+  {
+    "id": "elective_2021_06",
+    "sourceFiles": [
+      {
+        "name": "2021년 고3 6월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "e369a21766d3e786a1092a90065872578c448001859e06906d11bc83113cb15b"
+      },
+      {
+        "name": "2021년 고3 6월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "10b540d14a4003bf71b9a0c382dbb27d824e8b8c850c784b8f811cfbfd84a93c"
+      },
+      {
+        "name": "2021년 고3 6월 모평(평가원)언어와 매체-해설.pdf",
+        "sha256": "f71a327ff4557b2d62a262bb2d9024a8b8c07dc13eb8b7479cf7a51e6684056a"
+      }
+    ]
+  },
+  {
+    "id": "elective_2021_09",
+    "sourceFiles": [
+      {
+        "name": "2021년 고3 9월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "13f7cef4fd301eb2a289b64f204343f0bb6285b4141cad97dc25672c37c61a81"
+      },
+      {
+        "name": "2021년 고3 9월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "410f541a7da9269b9944b0bf3b0cfb9ae2ca8f1f813b8045d74a8a751f86ddb3"
+      },
+      {
+        "name": "2021년 고3 9월 모평(평가원)언어와 매체-해설.pdf",
+        "sha256": "9b825d3504d388eba2fe9f184015c26fa7f59f5e70f7f10d72dc97584f6cee64"
+      }
+    ]
+  },
+  {
+    "id": "elective_2021_11",
+    "sourceFiles": [
+      {
+        "name": "2022학년도 1화법과 작문.pdf",
+        "sha256": "246d68c7f3648e7d70aea981443a298260b732056020d9b6df2f99efcf8e1739"
+      },
+      {
+        "name": "2022학년도 2언어와 매체.pdf",
+        "sha256": "9dd4d5af33a3b8de87d8dc8535aa7b80f57a68382c8d9aa8aea1dbe345656bf1"
+      },
+      {
+        "name": "2022학년도 정답 및 해설.pdf",
+        "sha256": "7c942f6cb4e6f0c5202245a03bfaa4140a6d9e546bc22667dab7b26c8cb3884d"
+      }
+    ]
+  },
+  {
+    "id": "elective_2022_06",
+    "sourceFiles": [
+      {
+        "name": "2022년 고3 6월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "4925cefc17816d3e23cd7d33ca333c3e3614aa2247b076cc8a1ea5810c25370c"
+      },
+      {
+        "name": "2022년 고3 6월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "4f70d04fc63c54c58a929266033c249b80533cf0ead44ee9e9f0d02ec19abb14"
+      },
+      {
+        "name": "2022년 고3 6월 모평(평가원)화법과 작문-해설.pdf",
+        "sha256": "a4d932ac8b4d42bc1c92ec138b5a3633fa0d394b40601d168084fa6e1e718340"
+      },
+      {
+        "name": "2022년 고3 6월 모평(평가원)언어와 매체-해설.pdf",
+        "sha256": "22fc3edca49a557cfad3d3534760e3f5710e9375cfd479c21b0d900f0034d897"
+      }
+    ]
+  },
+  {
+    "id": "elective_2022_09",
+    "sourceFiles": [
+      {
+        "name": "2022년 고3 9월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "498ae126cb2cee5e0c5e890565e3b9bd887acf21f325dba39eb9600092bfa582"
+      },
+      {
+        "name": "2022년 고3 9월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "08caac0c99ac63e2f4e27e470506ef7991a1d139ffd76da447018dffc75f85ef"
+      },
+      {
+        "name": "2022년 고3 9월 모평(평가원)화법과 작문-해설.pdf",
+        "sha256": "807cdd44b2408942139afb709398ae43fb4bcb593c029eb5920ce769ad9532c3"
+      },
+      {
+        "name": "2022년 고3 9월 모평(평가원)언어와 매체-해설.pdf",
+        "sha256": "a800b3212c8f69bdc1036c4300ca1d209f442dc12ab793cf7305841032b5703d"
+      }
+    ]
+  },
+  {
+    "id": "elective_2022_11",
+    "sourceFiles": [
+      {
+        "name": "2023학년도 1화법과 작문.pdf",
+        "sha256": "6be1bd8b67a8e29daf86bd97784159bb04988c9ededeefbc8e31eb01ce31d517"
+      },
+      {
+        "name": "2023학년도 2언어와 매체.pdf",
+        "sha256": "df082e0d2809fa2458572d0525baef70663f7598e271e3177b76658de300ade8"
+      },
+      {
+        "name": "2023학년도 1화법과 작문_정답 및 해설.pdf",
+        "sha256": "cb0baba9aad8b234c36e82a423e204f70f4c76cd3e746ec2e469ff5dd64c584d"
+      },
+      {
+        "name": "2023학년도 2언어와 매체_정답 및 해설.pdf",
+        "sha256": "7049999259e52a9f7e597b78b54334fa95aa498093db0e1c996726d6402ec0fa"
+      }
+    ]
+  },
+  {
+    "id": "elective_2023_06",
+    "sourceFiles": [
+      {
+        "name": "2023년 고3 6월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "b05391faade31f0e4526c23a64cb507035e9f18290ac02edced50454b9fb3ffd"
+      },
+      {
+        "name": "2023년 고3 6월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "54baa164a182dd50948a9306b3f5db1562b1fd6b0e3fd79b5d494183bcb8b5e8"
+      },
+      {
+        "name": "2023년 고3 6월 모평(평가원)화법과 작문-해설.pdf",
+        "sha256": "c73968393545e5dafe1f46c8b99dd87c954462db14d82555e7f42f100df58040"
+      },
+      {
+        "name": "2023년 고3 6월 모평(평가원)언어와 매체-해설.pdf",
+        "sha256": "6c07f9e12da4aaf673f324dda3d135b0e68b84ccaf800de08c074bb970131179"
+      }
+    ]
+  },
+  {
+    "id": "elective_2023_09",
+    "sourceFiles": [
+      {
+        "name": "2023년 고3 9월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "f46f20e28d624bd8f35cf5a976edc86315f358c4c0545ca490f743d74ecf3960"
+      },
+      {
+        "name": "2023년 고3 9월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "ba9c1152b9dfe62655b21ece9d3eaa5a57bb473b1ca7d3a2a6dc7be25a648111"
+      },
+      {
+        "name": "2023년 고3 9월 모평(평가원)-해설.pdf",
+        "sha256": "693228d2d557a69b022871e9ff69ac85a56034a9c3e0cc23ab950ac2966f356b"
+      }
+    ]
+  },
+  {
+    "id": "elective_2023_11",
+    "sourceFiles": [
+      {
+        "name": "2024학년도 1화법과 작문.pdf",
+        "sha256": "dae042992076c2d939abb6c3c22455b4bc5d7279285e9c73cb6291f59bb1fe6d"
+      },
+      {
+        "name": "2024학년도 2언어와 매체.pdf",
+        "sha256": "77b2a5e31b1809d70892f32fd2b6b6cef696bd4a1f8ab6f59ef65c31e3db428d"
+      },
+      {
+        "name": "2024학년도 1화법과 작문_정답 및 해설.pdf",
+        "sha256": "223a7fad6c649323c345b89d64b5c927fc37248592751d3809b27df4aedc67e1"
+      },
+      {
+        "name": "2024학년도 2언어와 매체_정답 및 해설.pdf",
+        "sha256": "06ee11c791e5aa020afd24541307c323aa98b45b7e7738004c25f3632937c049"
+      }
+    ]
+  },
+  {
+    "id": "elective_2024_06",
+    "sourceFiles": [
+      {
+        "name": "2024년 고3 6월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "053180e3bbc9ca6b363882a83c479e3f8558718c027b17175f453e406243173d"
+      },
+      {
+        "name": "2024년 고3 6월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "566342a9c49909a55c1d9cd881e2134602e0bdb80b33d507238d9af55d13f065"
+      },
+      {
+        "name": "2024년 고3 6월 모평(평가원)-해설.pdf",
+        "sha256": "2c23c01dbd9bc12d00ae962f42f577fa2958a6c32d2136c254d70ff05de9d19d"
+      }
+    ]
+  },
+  {
+    "id": "elective_2024_09",
+    "sourceFiles": [
+      {
+        "name": "2024년 고3 9월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "fdd6dcd51be18317145a4a19cbe4064d8470796fbd67a461ce3d906e0953d2b7"
+      },
+      {
+        "name": "2024년 고3 9월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "729f0b7fb1861efbdfad62f1ba6ad71d44eb2f99472e77bc4c392812b098822b"
+      },
+      {
+        "name": "2024년 고3 9월 모평(평가원)-해설.pdf",
+        "sha256": "e8845a7db4721ec1920f359262d4c7ebad8049f17ad45d7902588d1a9e4a4c2e"
+      }
+    ]
+  },
+  {
+    "id": "elective_2024_11",
+    "sourceFiles": [
+      {
+        "name": "2025학년도.pdf",
+        "sha256": "5752d81065cfd3529058d93d231dece8539103ecd0a78e5fc2f6c5717c9e6618"
+      },
+      {
+        "name": "2025학년도 1화법과 작문_정답 및 해설.pdf",
+        "sha256": "04c65e24098f93c1780d354c3d266b127473f03fac5537a4806bcc38a54f1c93"
+      },
+      {
+        "name": "2025학년도 2언어와 매체_정답 및 해설.pdf",
+        "sha256": "39d82b105b6f3fe9ecfb7cdcb6f1833313adde4f5230c130ad029bbeb8e6dd9a"
+      }
+    ]
+  },
+  {
+    "id": "elective_2025_06",
+    "sourceFiles": [
+      {
+        "name": "2025년 고3 6월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "df26824312ebb62a7ef9cd3142ef426ed818d18092d65d66d5a617a8a1333a59"
+      },
+      {
+        "name": "2025년 고3 6월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "0f19de3c71f5d30223f427db697b55855f2541c6880803bbeaceda6fb655db43"
+      },
+      {
+        "name": "2025년 고3 6월 모평(평가원)-해설.pdf",
+        "sha256": "116435f6e120c82475741cffb12b0bc9d057788196b4b033b177076365812d4b"
+      }
+    ]
+  },
+  {
+    "id": "elective_2025_09",
+    "sourceFiles": [
+      {
+        "name": "2025년 고3 9월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "1b600adbe3a7d93ce7d337148ae2b154127792b8d7c497950fa5d267f96164b4"
+      },
+      {
+        "name": "2025년 고3 9월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "cb6857af1a7ee6f85ae12c90ff99f4a9ad90d4ba21f23a56e46123b9f80d2515"
+      },
+      {
+        "name": "2025년 고3 9월 모평(평가원)-해설.pdf",
+        "sha256": "0482dcc48584f2ce4eb6ce03605ab66ff8ae8b0229b1e7d0e7adc634f9679718"
+      }
+    ]
+  },
+  {
+    "id": "elective_2025_11",
+    "sourceFiles": [
+      {
+        "name": "2026학년도 1화법과 작문.pdf",
+        "sha256": "f9466527df1171fe8b236a49fcb412be946a7cdfc9cc551804855de553117b9a"
+      },
+      {
+        "name": "2026학년도 2언어와 매체.pdf",
+        "sha256": "d885efc0f436383942d5a83d95823675d746c5add8b00203d8a47bf7600e4d80"
+      },
+      {
+        "name": "2026학년도 정답 및 해설.pdf",
+        "sha256": "eee3d66626490fdfc1bbe0d8cd9f3330151e8af03f039a17293966b6cc00bea6"
+      }
+    ]
+  },
+  {
+    "id": "elective_2026_06",
+    "sourceFiles": [
+      {
+        "name": "2026년 고3 6월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "7f6f54c0038ba4e9a95cba1d70fe7174b2a38f161a6c351a697eeeb75ebe4dc5"
+      },
+      {
+        "name": "2026년 고3 6월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "282a262b96c87e8a1183deafd97c73ca40c04beec53f9b12f0f37ca5cdd35a35"
+      },
+      {
+        "name": "2026년 고3 6월 모평(평가원)-해설.pdf",
+        "sha256": "a69efecde6773471752008b4db3305989e76af9ea6d08d48ef3a82b0f9f6fd97"
+      }
+    ]
+  },
+  {
+    "id": "elective_2026_09",
+    "sourceFiles": [
+      {
+        "name": "2026년 고3 9월 모평(평가원)화법과 작문-문제.pdf",
+        "sha256": "7e9bbc7e69d22f9fa602a14f8a3cd8d3a17f6a4db930bcb068fde31016c22478"
+      },
+      {
+        "name": "2026년 고3 9월 모평(평가원)언어와 매체-문제.pdf",
+        "sha256": "702781dc0becf5c6f8d228cca23babc2f1169b0b7e382bc21fa3ff0157820d8c"
+      },
+      {
+        "name": "2026년 고3 9월 모평(평가원)-해설.pdf",
+        "sha256": "eee6557c419c622499799809713b0c9a699eb300a8c5fa5d4f1272054d4cba96"
+      }
+    ]
+  }
+]
