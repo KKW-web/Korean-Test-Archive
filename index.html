@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>국어영역 기출 아카이브(28학년도 예시 문항 반영)</title>
+<meta name="description" content="28학년도 예시 문항과 기출 450문항을 영역별로 탐색하고, 문제·해설을 확인하고, 나만의 자료집으로 출력하세요.">
+<link rel="stylesheet" href="style.css?v=20261105-v8"><link rel="stylesheet" href="reader.css?v=20261105-v8">
+</head>
+<body>
+<a class="skip-link" href="#main">검색 결과로 건너뛰기</a>
+<header class="top">
+  <a class="brand" href="#browse" aria-label="국어영역 기출 아카이브 처음으로"><span><b>국어영역 기출 아카이브</b><small>28학년도 예시 문항 반영 · 문제부터 해설까지 한곳에서</small></span></a>
+  <div id="stats" class="stats" aria-label="수록 자료"></div>
+  <div class="top-actions"><button id="printBtn" class="button primary">선택 자료 출력 <span id="collectionCountTop">0</span></button></div>
+</header>
+<section id="archiveOverview" class="archive-overview" aria-label="수록 문항의 영역별 구성"></section>
+<nav class="view-nav" aria-label="자료 보기 방식"><button data-view="browse" class="active">자료 탐색</button><button data-view="favorites">즐겨찾기 <span id="favoritesCount">0</span></button><button data-view="compare">지문 비교 <span id="selectionCount">0</span></button><button data-view="table">전체 문항표</button><button data-view="collection">선택 자료 출력 <span id="collectionCount">0</span></button></nav>
+<p id="viewDescription" class="view-description" aria-live="polite"></p>
+<div class="workspace">
+  <section class="filters" aria-label="자료 검색 조건">
+    <div class="exam-filter-row"><span class="filter-row-label">시험</span><button class="exam-all active" data-clear-exams aria-pressed="true">전체</button><div id="examFilters" class="exam-chips check-list"></div><span class="filter-row-hint">여러 시험 선택 가능</span></div>
+    <div class="search-filter-row"><label class="sr-only" for="query">작품·작가·소재·발문 검색</label><div class="searchbox"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="query" type="search" placeholder="작품명, 작가, 소재 또는 발문으로 검색하세요" autocomplete="off"><button id="clearQuery" aria-label="검색어 지우기">×</button></div><button id="filterToggle" class="filter-toggle" aria-expanded="false" aria-controls="advancedFilters"><span id="advancedFilterCount">상세 조건</span><span id="filterToggleHint">펼치기 ⌄</span></button><button id="resetBtn" class="reset-button">초기화</button></div>
+    <div id="genreBar"></div>
+    <div id="advancedFilters" class="advanced-filters">
+      <div class="advanced-field"><label class="field-label" for="areaSelect">영역·갈래로 바로 선택</label><select id="areaSelect"><option value="">모든 영역</option></select></div>
+      <div class="advanced-field"><label class="field-label" for="referenceFilter">연결된 예시문항</label><select id="referenceFilter"><option value="">모든 예시문항 유형</option></select></div>
+      <div class="advanced-field"><label class="field-label" for="gradeFilter">학년</label><select id="gradeFilter"><option value="">전체 학년</option><option value="1">고1</option><option value="2">고2</option><option value="reference">예시문항</option></select></div>
+      <details class="filter-section"><summary>영역 여러 개 선택</summary><div id="areaFilters" class="check-list compact"></div></details>
+      <details class="filter-section"><summary>세부 갈래·분야 여러 개 선택</summary><div id="subFilters"></div></details>
+      <div class="advanced-checks"><label class="check-label"><input type="checkbox" id="includeMixed" checked> 복합·통합 자료 포함</label><label class="check-label"><input type="checkbox" id="bookmarkFilter">즐겨찾기 자료만 검색</label></div>
+      <div class="basket-block"><div class="selection-heading">비교할 자료 <span>최대 2묶음</span></div><div id="basket"></div><div class="basket-actions"><button id="compareBtn" class="button secondary">지문 비교 열기</button><button id="clearComparisonSide" class="text-button" data-clear-comparison>비교 선택 해제</button></div></div>
+      <p class="filter-help">같은 항목 안의 선택은 함께 찾고, 시험·영역·검색어 등 서로 다른 조건은 모두 적용합니다.</p>
+    </div>
+  </section>
+  <main id="main" tabindex="-1"><div id="status" role="status"></div><div id="activeFilters" class="active-filters" aria-label="적용된 검색 조건"></div><section id="browseView" class="view"></section><section id="compareView" class="view" hidden></section><section id="favoritesView" class="view" hidden></section><section id="detailView" class="view" hidden></section><section id="tableView" class="view" hidden></section><section id="collectionView" class="view" hidden></section></main>
+</div>
+<footer><span>공식 정답과 원문 해설을 우선하여 판단하세요.</span><span>즐겨찾기와 출력할 자료 목록은 현재 브라우저에 저장됩니다.</span></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="data.js?v=20261105-v8"></script><script src="reader.js?v=20261105-v8"></script><script src="app.js?v=20261105-v8"></script>
+</body></html>

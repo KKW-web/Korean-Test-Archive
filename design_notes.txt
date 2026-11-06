@@ -1,0 +1,8 @@
+화면 설계 참고
+EBSi 기출문제: https://www.ebsi.co.kr/ebs/xip/xipc/previousPaperList.ebs
+Khan Academy 자료 탐색: https://khankids.zendesk.com/hc/en-us/articles/360042194831-Module-3-Assigning-lessons
+NN/g 필터 적용: https://www.nngroup.com/articles/applying-filters/
+Maersk 필터 패턴: https://designsystem.maersk.com/guidelines/search-filter-and-sort/filter-patterns/
+
+적용 사항: 복수 조건 선택, 적용조건 개별해제, 조회맥락 보존, 세부 분류 탐색, 인쇄모음 별도 관리.
+직접 구현한 화면이며 위 사이트의 디자인이나 코드를 복제하지 않았습니다.

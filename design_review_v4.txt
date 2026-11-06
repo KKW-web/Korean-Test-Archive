@@ -1,0 +1,13 @@
+국어 기출 아카이브: 탐색 구조 재설계 근거
+
+1. EBSi 기출문제 검색: 시험 조건을 구분하여 검색하고 해제하는 흐름 참고.
+https://www.ebsi.co.kr/ebs/xip/xipc/previousPaperList.ebs?targetCd=D100
+2. 영국 교육부 Filter: 필터와 결과를 구별하고 작은 화면에서도 조건 접근성을 유지하는 설계 참고.
+https://design.education.gov.uk/design-system/components/filter
+3. DWP Filters: 적용된 조건, 결과 수, 조건별 해제와 전체 해제의 일관성 참고.
+https://design-system.dwp.gov.uk/contribute/filters/summary
+4. W3C WCAG 색상 사용: 영역을 색만으로 구별하지 않고 텍스트·선택 표시를 함께 제공.
+https://www.w3.org/WAI/WCAG22/Understanding/use-of-color
+
+적용 결정: 특정 두 영역만 강조하는 바로가기를 없애고 다섯 대영역을 동등하게 제공한다. 통합 지문은 구성 영역 각각에서 찾되 결과는 고유 묶음 기준으로 한 번만 표시한다. 문학의 갈래 복합과 서로 다른 대영역의 통합은 구별한다. 인쇄모음은 주요 메뉴로 유지하고, 개별·검색 결과·즐겨찾기의 출력 흐름을 보존한다.
+세부 분류는 현재 자료에 근거한다. 검증하지 않은 화법·작문·언어 세부 주제를 임의로 부여하지 않는다.
