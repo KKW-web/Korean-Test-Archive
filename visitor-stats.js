@@ -19,7 +19,8 @@ window.ARCHIVE_ANALYTICS = window.ARCHIVE_ANALYTICS || { account: 'kkw-korean-ar
   footer.style.flexWrap = 'wrap';
   footer.appendChild(stats);
   const day = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-  const endpoint = origin + '/counter/' + encodeURIComponent(path) + '.json';
+  // This GoatCounter account is dedicated to the archive. TOTAL also works before the first recorded path exists.
+  const endpoint = origin + '/counter/TOTAL.json';
   async function display(url, id) {
     try {
       const res = await fetch(url, {mode:'cors', credentials:'omit', signal:AbortSignal.timeout(8000)});
