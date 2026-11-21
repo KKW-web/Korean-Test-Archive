@@ -29,6 +29,29 @@ SETS = [
 ]
 ANSWERS = ['1432353214253135321541453525421244','15533513424','52534121534']
 
+# Zero-based pages of the numbered EBS explanation headings.
+HEADING_PAGES = [0,0,1,2,2,3,3,4,4,5,6,6,7,8,8,9,9,10,10,11,11,13,13,14,14,15,16,16,17,17,19,19,19,20,21,21,21,22,22,23,24,24,24,25,25,26,27,27,28,28,29,29,30,30,31,31]
+SKILLS = ["세부 내용 파악","세부 내용 파악","구체적 사례 적용","글의 구조와 전개 방식","세부 내용 파악","글에 드러난 관점, 내용 비판","다른 견해와의 비교","구체적 사례 적용","단어의 의미 파악","세부 내용 파악","생략된 내용 추론","구체적 사례 적용","단어의 의미 파악","세부 내용 파악","세부 내용 파악","내용의 인과관계 파악","구체적 사례 적용","인물의 심리, 태도 파악","소재의 기능 파악","구절의 의미 이해","외적 준거에 따른 작품 감상","작품 간 비교 감상","외적 준거에 따른 작품 감상","시어, 시구의 의미와 기능 파악","외적 준거에 따른 작품 감상","작품의 맥락 이해","서술상의 특징 파악","구절의 의미 이해","소재의 기능 파악","외적 준거에 따른 작품 감상","표현상의 특징 파악","시어, 시구의 의미와 기능 파악","배경 및 소재의 기능 파악","외적 준거에 따른 작품 감상","발표 표현 전략 사용하기","발표에서 자료, 매체 활용하기","발표 내용 이해, 평가하기","대화 내용 이해, 평가하기","대화 맥락 분석하기","보고 글쓰기 내용 생성하기","보고 글쓰기 표현 전략 사용하기","보고 글쓰기 내용 점검, 조정하기","설득 글쓰기 내용 조직하기","설득 글쓰기 내용 생성하기","설득 글쓰기 자료, 매체 활용하기","형태소의 종류","합성어와 파생어 분석","안은문장","중의문의 유형","음운의 변천","매체 언어의 의미 전달 방식","사회적 상호 작용","매체 언어의 복합 양식성","매체 언어의 표현 방법","뉴미디어의 특성","매체 언어의 표현 방법"]
+
+def explanation_heading(rows, group, number):
+    idx = number - 1 if group < 2 else number + 10
+    page, skill = HEADING_PAGES[idx], SKILLS[idx]
+    pattern = r'^' + '(?:' + str(number) + r'\.)?' + re.escape(re.sub(r'\s+', '', skill))
+    # Use the actual skill heading so the answer table cannot match a number.
+    numbered = rf'^{number}\.' + re.escape(re.sub(r'\s+', '', skill))
+    try:
+        return locate(rows, numbered, page, page+1), skill
+    except ValueError:
+        candidates = [(k,v) for k,v in rows if k[0]==page and re.match(pattern,re.sub(r'\s+','',v))]
+        if candidates:
+            number_rows = [k for k,v in rows if k[0]==page and v.strip()==f'{number}.']
+            if number_rows:
+                return min((k for k,v in candidates),key=lambda k:min(abs(k[2]-n[2]) for n in number_rows)),skill
+            return candidates[0][0],skill
+        # The font may split the heading across spans. Match its first word on the verified page.
+        first = re.escape(skill.split()[0])
+        return locate(rows,rf'^(?:{number}\.)?{first}',page,page+1),skill
+
 def source(urls, pages):
     for url in urls:
         try:
@@ -96,9 +119,9 @@ def build():
         prefix = rf'^\[{ns[0]}[~～∼–-]{ns[-1]}\]' if len(ns)>1 else rf'^{ns[0]}\.'
         qp = locate(qr,prefix,lo,hi)
         try:
-            ap = locate(ar,prefix,alo,ahi)
+            ap = locate(ar,prefix,alo,ahi) if len(ns)>1 else explanation_heading(ar,group,ns[0])[0]
         except ValueError:
-            ap = locate(ar,rf'^{ns[0]}\.(?![①②③④⑤])',alo,ahi)
+            ap = explanation_heading(ar,group,ns[0])[0]
         starts.append((qp,ap))
         area = ('독서' if i < 4 else '문학') if group==0 else ['','화법과 작문','언어와 매체'][group]
         subject = ['common','speech','language'][group]
@@ -106,9 +129,7 @@ def build():
         for n in range(ns[0],ns[-1]+1):
             marker = rf'^{n}\.(?![①②③④⑤])'
             pos = locate(qr,marker,lo,hi)
-            a_pos = locate(ar,marker,alo,ahi)
-            skill = next(v for k,v in ar if k==a_pos and re.match(marker,re.sub(r'\s+','',v)))
-            skill = re.sub(r'^\s*\d+\s*\.\s*','',skill).strip()
+            a_pos,skill = explanation_heading(ar,group,n)
             chunk=[]
             for k,v in qr:
                 if k < pos or k[0]!=pos[0] or k[1]!=pos[1]: continue
