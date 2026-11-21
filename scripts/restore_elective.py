@@ -35,3 +35,5 @@ print(json.dumps({'electiveExams':17,'questions':952,'sourceCrops':count}))
 # Supplementary PDFs are downloaded, validated and bundled for offline access.
 import runpy
 runpy.run_path('scripts/attach_explanations.py',run_name='__main__')
+
+runpy.run_path('scripts/add_2027_csat.py',run_name='__main__')
