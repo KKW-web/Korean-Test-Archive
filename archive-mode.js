@@ -15,7 +15,8 @@
   function normalizeLiteraryTitle(title) {
     return String(title).split(/(·| \/ )/).map(part => {
       if (part === '·' || part === ' / ') return part;
-      let label = part.replace(/^(\s*)(작자 미상|[가-힣]{2,4})\s*,?\s*(?=「)/, '$1$2, ');
+      let label = part.replace(/‘([^’]+)’/g, '「$1」').replace(/｢/g, '「').replace(/｣/g, '」');
+      label = label.replace(/(^|[\s·/()–—-])(작자 미상|[가-힣]{2,4})\s*,?\s*(?=「)/g, '$1$2, ');
       if (!label.includes('「')) {
         const match = label.match(/^(\s*)(작자 미상|[가-힣]{2,4}),\s*(.+?)(\s*)$/);
         if (match) label = match[1] + match[2] + ', 「' + match[3] + '」' + match[4];
